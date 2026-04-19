@@ -4,7 +4,6 @@ WORKDIR /app
 
 # Copy root manifest files
 COPY package*.json ./
-COPY tsconfig.json ./
 
 # Copy all workspace packages
 COPY packages ./packages
