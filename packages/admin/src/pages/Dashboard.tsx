@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { MessageSquare, MessagesSquare, Mic, AlertCircle } from 'lucide-react';
 
 export function Dashboard() {
   const [stats, setStats] = useState<any>(null);
@@ -19,15 +20,15 @@ export function Dashboard() {
   const maxToolCount = Math.max(...Object.values(stats.toolUsage || {}).map(Number), 1);
 
   return (
-    <div className="max-w-6xl mx-auto pb-12">
-      <h2 className="text-3xl font-bold mb-6 text-slate-800">Analytics Overview (VIHARA)</h2>
+    <div className="max-w-6xl mx-auto pb-12 animate-in fade-in duration-500">
+      <h2 className="text-3xl font-extrabold mb-8 text-slate-900 tracking-tight">Analytics Overview <span className="text-indigo-600">(VIHARA)</span></h2>
       
       {/* Top Metrics Cards */}
-      <div className="grid grid-cols-4 gap-6 mb-8">
-        <MetricCard title="Total Chats" value={stats.totalChats} />
-        <MetricCard title="Total Messages" value={stats.totalMessages} />
-        <MetricCard title="Voice Interactions" value={stats.voiceUsage} />
-        <MetricCard title="Knowledge Misses" value={stats.failedQueries} color="text-red-500" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <MetricCard title="Total Chats" value={stats.totalChats} icon={<MessageSquare size={24} className="text-indigo-500" />} />
+        <MetricCard title="Total Messages" value={stats.totalMessages} icon={<MessagesSquare size={24} className="text-blue-500" />} />
+        <MetricCard title="Voice Interactions" value={stats.voiceUsage} icon={<Mic size={24} className="text-emerald-500" />} />
+        <MetricCard title="Knowledge Misses" value={stats.failedQueries} color="text-rose-600" icon={<AlertCircle size={24} className="text-rose-500" />} />
       </div>
 
       <div className="grid grid-cols-2 gap-8">
@@ -89,11 +90,17 @@ export function Dashboard() {
   );
 }
 
-function MetricCard({ title, value, color = "text-slate-800" }: { title: string, value: number, color?: string }) {
+function MetricCard({ title, value, color = "text-slate-800", icon }: { title: string, value: number, color?: string, icon?: React.ReactNode }) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-      <h3 className="text-sm font-medium text-slate-500 mb-2 uppercase tracking-wider">{title}</h3>
-      <div className={`text-4xl font-bold ${color}`}>{value || 0}</div>
+    <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-slate-200 transition-all hover:-translate-y-1 relative overflow-hidden group">
+      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity blur-[1px]">
+        {icon && <div className="scale-[2.5] origin-top-right">{icon}</div>}
+      </div>
+      <div className="flex items-center justify-between mb-4 relative z-10">
+        <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest">{title}</h3>
+        {icon && <div className="bg-slate-50 p-2 rounded-xl">{icon}</div>}
+      </div>
+      <div className={`text-5xl font-extrabold tracking-tight relative z-10 ${color}`}>{value || 0}</div>
     </div>
   );
 }
