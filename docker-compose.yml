@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  versatile-bot:
+    build: .
+    container_name: versatile-bot
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      # CRITICAL: Mount data and tenants locally to persist vector data across container restarts
+      - ./data:/app/data
+      - ./tenants:/app/tenants
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=3001

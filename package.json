@@ -1,0 +1,27 @@
+{
+  "name": "versatile-ai-bot",
+  "version": "1.0.0",
+  "description": "Production-ready multi-tenant embeddable AI chatbot platform",
+  "private": true,
+  "workspaces": [
+    "packages/server",
+    "packages/widget",
+    "packages/admin",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=packages/server\" \"npm run dev --workspace=packages/admin\"",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "dev:widget": "npm run dev --workspace=packages/widget",
+    "dev:admin": "npm run dev --workspace=packages/admin",
+    "build": "npm run build --workspace=packages/shared && npm run build --workspace=packages/widget && npm run build --workspace=packages/server && npm run build --workspace=packages/admin",
+    "build:shared": "npm run build --workspace=packages/shared",
+    "build:widget": "npm run build --workspace=packages/widget",
+    "build:server": "npm run build --workspace=packages/server",
+    "build:admin": "npm run build --workspace=packages/admin",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

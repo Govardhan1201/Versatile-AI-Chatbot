@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIHARA - Discover Offbeat India</title>
+  
+  <!-- Dummy page metadata that the widget will pick up -->
+  <meta name="description" content="Explore Spiti Valley, the cold desert mountain valley in Himachal Pradesh. Perfect for budget travel and adventure.">
+  <meta name="page-type" content="destination">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: #f9fdfa; /* Vihara light accent */
+    }
+    h1 { color: #2D6A4F; font-size: 2.5em; border-bottom: 2px solid #52B788; padding-bottom: 10px; }
+    h2 { color: #40916c; margin-top: 30px; }
+    p { margin-bottom: 20px; font-size: 1.1em; }
+    .hero {
+      background: linear-gradient(rgba(45, 106, 79, 0.8), rgba(45, 106, 79, 0.8)), url('https://images.unsplash.com/photo-1542601098-8fc114e148e2?auto=format&fit=crop&q=80');
+      background-size: cover;
+      color: white;
+      padding: 60px 40px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+    }
+    .hero h1 { color: white; border-bottom-color: rgba(255,255,255,0.3); }
+    .tag { background: #52B788; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; font-weight: bold; }
+    .section-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px; border-left: 4px solid #2D6A4F; }
+    #itinerary { background: #F0FAF4; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Spiti Valley: The Middle Land</h1>
+    <p>A cold desert mountain valley located high in the Himalayas in the north-eastern part of the northern Indian state of Himachal Pradesh.</p>
+    <span class="tag">Mountain</span> <span class="tag">Budget</span> <span class="tag">Monastery</span>
+  </div>
+
+  <h2>Why visit Spiti?</h2>
+  <div class="section-card">
+    <p>Spiti is one of the most rugged and remote regions in India. With an average altitude of 12,500 feet, it offers surreal landscapes, ancient Tibetan Buddhist monasteries, and star-filled night skies.</p>
+    <p>The name "Spiti" means "The Middle Land", i.e. the land between Tibet and India.</p>
+  </div>
+
+  <h2 id="how-to-reach">How to Reach</h2>
+  <div class="section-card">
+    <p>You can enter Spiti from two sides:</p>
+    <ul>
+      <li><strong>Via Manali:</strong> Cross the Rohtang Pass and Kunzum Pass. This route is open only in summer (June to October).</li>
+      <li><strong>Via Shimla:</strong> Through the Kinnaur valley. This route is generally open year-round but is a longer drive.</li>
+    </ul>
+  </div>
+
+  <h2 id="itinerary">Sample Travel Plan</h2>
+  <div class="section-card" id="itinerary-card">
+    <p>Try highlighting this text, then asking the bot to summarize what you selected!</p>
+    <p>Also, notice how you can ask the bot about Spiti, and it knows you are currently reading this page because it reads the page context and metadata automatically.</p>
+  </div>
+
+  <p style="text-align: center; margin-top: 60px; font-size: 0.9em; color: #666;">
+    The chatbot widget should appear in the bottom right corner.<br>
+    Built with the Versatile AI Bot platform.
+  </p>
+
+  <!-- IMPORTANT: This is how the widget is integrated -->
+  <script src="http://localhost:3001/widget" data-site-id="vihara"></script>
+  
+</body>
+</html>

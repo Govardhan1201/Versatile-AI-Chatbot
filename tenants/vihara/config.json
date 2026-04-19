@@ -1,0 +1,88 @@
+{
+  "siteId": "vihara",
+  "siteName": "VIHARA",
+  "siteDescription": "Discover offbeat India — curated travel for the curious explorer",
+  "active": true,
+
+  "allowedDomains": ["*"],
+
+  "theme": {
+    "primaryColor": "#2D6A4F",
+    "secondaryColor": "#52B788",
+    "backgroundColor": "#ffffff",
+    "textColor": "#1B1F23",
+    "bubbleUserColor": "#2D6A4F",
+    "bubbleBotColor": "#F0FAF4",
+    "borderRadius": "18px",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "darkMode": false,
+    "launcherIcon": "🌿",
+    "position": "bottom-right"
+  },
+
+  "welcomeMessage": "🌿 Namaste! I'm Vihara's travel guide. Ask me about offbeat destinations, itineraries, budget trips, or anything about hidden India! You can also speak to me using the mic button.",
+
+  "suggestedPrompts": [
+    "🏔️ Best offbeat places in North India",
+    "🌊 Hidden beaches in Maharashtra",
+    "📅 Plan a 5-day budget trip",
+    "🗺️ Compare Spiti Valley vs Ladakh",
+    "🎭 Offbeat Northeast India destinations"
+  ],
+
+  "chatTitle": "VIHARA Travel Guide",
+  "placeholderText": "Ask about places, itineraries, tips...",
+
+  "model": {
+    "provider": "mock",
+    "model": "gpt-4o-mini",
+    "temperature": 0.8,
+    "maxTokens": 1200,
+    "systemPrompt": "You are VIHARA's expert offbeat travel guide for India. Your name is Vihara. You are warm, enthusiastic, and deeply knowledgeable about India's hidden gems — places most tourists never discover.\n\nYour personality:\n- Conversational and friendly, like a well-traveled friend giving advice\n- Use relevant emojis naturally (🏔️🌊🌿🗺️)\n- Mix English with occasional Hindi/Telugu phrases when appropriate\n- Give specific, actionable advice — not generic tourist tips\n- Share insider knowledge: best seasons, local food, transport hacks, budget tips\n\nYour capabilities:\n- Recommend offbeat destinations filtered by budget, season, region, interests\n- Compare destinations side by side\n- Plan detailed day-by-day itineraries\n- Suggest hidden restaurants, guesthouses, local experiences\n- Explain transport options from major cities\n- Summarize the current page if the user asks\n- Guide users to relevant website sections\n\nAlways recommend offbeat, less-visited places over popular tourist spots unless specifically asked. Celebrate India's diversity — from Arunachal to Kerala, from Rajasthan's interiors to Andaman's hidden coves.\n\nIf you don't know something specific, say so honestly and offer to help find related information.\n\nFor Hindi: respond naturally if user speaks Hindi. For Telugu: respond if user speaks Telugu. Auto-detect their language."
+  },
+
+  "voice": {
+    "enabled": true,
+    "defaultVoice": "en-IN",
+    "pushToTalk": false,
+    "ttsEnabled": true,
+    "sttProvider": "browser",
+    "ttsProvider": "browser"
+  },
+
+  "languages": {
+    "supported": ["en", "hi", "te"],
+    "default": "en",
+    "autoDetect": true
+  },
+
+  "allowedTools": [
+    "searchWebsiteContent",
+    "recommendPlaces",
+    "comparePlaces",
+    "planItinerary",
+    "openPage",
+    "scrollToSection",
+    "collectLead"
+  ],
+
+  "knowledgeBase": {
+    "enabled": true,
+    "maxResults": 5,
+    "minScore": 0.25,
+    "citeSources": true
+  },
+
+  "rateLimit": {
+    "requestsPerMinute": 30,
+    "maxTokensPerSession": 80000
+  },
+
+  "analytics": {
+    "enabled": true,
+    "trackConversations": true,
+    "trackTools": true
+  },
+
+  "createdAt": "2026-04-19T00:00:00Z"
+}

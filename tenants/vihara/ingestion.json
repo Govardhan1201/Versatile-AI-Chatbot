@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "type": "file",
+      "pattern": "*.md",
+      "label": "VIHARA Markdown Knowledge Base"
+    },
+    {
+      "type": "file",
+      "pattern": "faqs.json",
+      "label": "VIHARA FAQs"
+    },
+    {
+      "type": "raw",
+      "source": "vihara/contact",
+      "label": "Contact & Support Info",
+      "text": "VIHARA Contact Information\n\nFor travel inquiries: hello@vihara.travel\nFor partnerships: partners@vihara.travel\nFor press and media: press@vihara.travel\n\nOur team is available Monday–Saturday, 9 AM–7 PM IST.\nWe typically respond within 24 hours.\n\nYou can also reach us via WhatsApp at +91-98765-43210.\n\nHead Office: VIHARA Travel Pvt. Ltd., 4th Floor, Kailash Building, New Delhi – 110048, India."
+    },
+    {
+      "type": "sitemap",
+      "url": "https://example.com/sitemap.xml",
+      "maxPages": 5,
+      "label": "VIHARA SEO Sitemap"
+    }
+  ]
+}
