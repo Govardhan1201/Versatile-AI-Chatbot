@@ -45,6 +45,17 @@ if (fs.existsSync(widgetDistPath)) {
   logger.info('Serving widget from /widget');
 }
 
+// ─── Static: serve built admin dashboard ─────────────────────────────────────
+const adminDistPath = path.resolve(__dirname, '../../admin/dist');
+if (fs.existsSync(adminDistPath)) {
+  app.use('/admin', express.static(adminDistPath));
+  // Serve index.html for React Router's client-side routing
+  app.get('/admin/*', (req, res) => {
+    res.sendFile(path.join(adminDistPath, 'index.html'));
+  });
+  logger.info('Serving admin dashboard from /admin');
+}
+
 // ─── Health Check ────────────────────────────────────────────────────────────
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok', version: '1.0.0', provider: env.llmProvider, ts: new Date().toISOString() });
