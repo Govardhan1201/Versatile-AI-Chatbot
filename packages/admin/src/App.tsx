@@ -11,7 +11,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(!!localStorage.getItem('adminToken'));
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/admin">
       <Routes>
         <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
         
