@@ -95,20 +95,7 @@ async function start() {
   // Register all tools
   registerAllTools();
 
-  // Auto-ingest knowledge bases for all tenants on startup
-  logger.info('Auto-ingesting knowledge bases...');
-  const tenantIds = await tenantManager.listTenants();
-  for (const siteId of tenantIds) {
-    try {
-      const rag = getRAGPipeline(siteId);
-      const result = await rag.ingestFromDirectory();
-      if (result.chunksAdded > 0) {
-        logger.info(`Auto-ingested ${result.chunksAdded} chunks for tenant: ${siteId}`);
-      }
-    } catch (err) {
-      logger.warn(`Auto-ingest skipped for ${siteId}:`, err);
-    }
-  }
+  // Disabled blocking auto-ingestion on startup for faster cloud deployment Boots
 
   app.listen(env.port, () => {
     logger.info(`🚀 VERSATILE AI BOT backend running at http://localhost:${env.port}`);
